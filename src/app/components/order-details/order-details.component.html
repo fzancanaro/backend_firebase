@@ -1,0 +1,57 @@
+<div *ngIf = "order_details">
+
+	<a [routerLink] = "['/orders']">Go back </a>
+	<br>
+	
+	<h2 class ="page header">ORDER DETAILS</h2>
+	<h2 class ="page header"><small><b>{{order_details.user_name}}</b></small>    <small>  {{order_details.restaurant_name}}</small></h2>
+	<div class = "row">
+		<div class = "col-md-4">
+			<img style="width:100%;height:300px;" class="thumbnail" src="{{order_details.product_firebase}}">
+		
+		</div>
+		
+		<div class = "col-md-8">
+			<ul class ="list-group">
+				<li class = "list-group-item">Restaurant name: <b>{{order_details.restaurant_name}}</b></li>
+				<li class = "list-group-item">Customer name: <b>{{order_details.user_name}}</b></li>
+				<li class = "list-group-item">Product name: <b>{{order_details.product_name}}</b></li>
+				<li class = "list-group-item">Item Quantity: <b>{{order_details.item_qty}}</b></li>
+				<li class = "list-group-item">Payment id: <b>{{order_details.payment_id}}</b></li>
+				<li class = "list-group-item">Product Image: <b>{{order_details.product_image}}</b></li>
+				<li class = "list-group-item">Product Price: <b>{{order_details.product_price}}$</b></li>
+				<li class = "list-group-item">Product Total Price: <b>{{order_details.product_total_price}}$</b></li>
+				<li class = "list-group-item" >Status: <b style = "color:green;">{{order_details.status}}</b></li>
+				<li class = "list-group-item">Order Date Time: <b>{{order_details.order_date_time}}</b></li>
+				
+			
+				
+			</ul>
+		
+		</div>
+		
+		<a class = "btn btn-default" [routerLink] = "['/edit-order/' + order_details.$key]">Change Status</a>
+		<a (click) = "onOrderDelete()" class = "btn btn-danger" >Delete</a>
+	</div>
+
+
+</div>
+
+
+<!---
+<ul class = "list-group">
+
+
+	<div class="row" >
+		  <div class="col-xs-12 col-md-3" *ngFor="let item of items">
+				
+				<a [routerLink]="['/item-details/'+item.$key]" style = "text-align: center;"><h4>{{item.name}}</h4></a>
+				
+				<img style="width:100%;height:150px;" class="thumbnail" src="{{item.image_firebase_url}}">
+				
+		  </div>
+		  
+	</div>
+
+</ul>
+-->

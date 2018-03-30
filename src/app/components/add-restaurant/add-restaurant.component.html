@@ -1,0 +1,104 @@
+<a [routerLink]="['/restaurants']">Back</a>
+<br />
+<h2 class="page-header">Add New Locations</h2>
+<form (submit)="onAddRestaurant()">
+  <div class="form-group">
+    <label>Title</label>
+    <input class="form-control" type="text" [(ngModel)]="title" name="title" required>
+  </div>
+
+  <div class="form-group">
+    <label>Address</label>
+    <input class="form-control" type="text" [(ngModel)]="address" name="address" required>
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <input class="form-control" type="text" [(ngModel)]="description" name="description" required>
+  </div>
+
+  <div class="form-group">
+    <label>Info</label>
+    <input class="form-control" type="text" [(ngModel)]="info" name="info" required>
+  </div>
+  
+   <div class="form-group">
+    <label>lat</label>
+    <input class="form-control" type="double" [(ngModel)]="lat" name="lat" required>
+  </div>
+  <div class="form-group">
+    <label>long</label>
+    <input class="form-control" type="double" [(ngModel)]="long" name="long" required>
+  </div>
+  <div class="form-group">
+    <label>mark</label>
+    <input class="form-control" type="text" [(ngModel)]="mark" name="mark" required>
+  </div>
+  <div class="form-group">
+    <label>option</label>
+    <input class="form-control" type="number" [(ngModel)]="option" name="option" required>
+  </div>
+  
+   <div class="form-group">
+    <label>working time</label>
+    <input class="form-control" type="text" [(ngModel)]="outlet" name="outlet" required>
+  </div>
+  <div class="form-group">
+    <label>phonenumber</label>
+    <input class="form-control" type="text" [(ngModel)]="phonenumber" name="phonenumber" required>
+  </div>
+  
+  <div class="form-group">
+    <label>Google Map Image</label>
+    <select class="form-control" type="text" [(ngModel)]="img" name="type" required>
+      <option value="aubergine.png">Aubergine</option>
+      <option value="birthday-cake.png">Birthday Cake</option>
+      <option value="bread.png">Bread</option>
+	  <option value="brochettes.png">Brochettes</option>
+	  <option value="carrot.png">Carrot</option>
+	  <option value="chicken-1.png">Chicken-1</option>
+	  <option value="chocolate-1.png">chocolate-1</option>
+	  <option value="chocolate.png">Chocolate</option>
+	  <option value="coffee.png">Coffee</option>
+	  <option value="covering.png">Covering</option>
+	  <option value="beer.png">Beer</option>
+	  <option value="biscuit.png">Biscuit</option>
+	  <option value="breakfast.png">Breakfast</option>
+	  <option value="burger.png">Burger</option>
+	  <option value="cheese.png">Cheese</option>
+	  <option value="chicken.png">Chicken</option>
+	  <option value="chocolate-2.png">Chocolate-2</option>
+	  <option value="cocktail.png">Cocktail</option>
+	  <option value="coke.png">Coke</option>
+	  <option value="hospital.png">Hostipal</option>
+	  <option value="cafe.png">Cafe</option>
+	  <option value="bus.png">Bus</option>
+	  <option value="restaurant.png">Restaurant</option>
+	  <option value="cinema.png">Cinema</option>
+	  <option value="airport.png">Airport</option>
+	 
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label>Choose Category</label>
+	
+	<select class="form-control" type="text"  [(ngModel)]="category" name="category" required>
+
+	
+     
+      <option *ngFor="let category of categories" [value]="category.$key">{{category.cat_name}}</option>
+	 
+   
+	</select>
+	
+
+	
+  </div>
+  
+  
+  <div class="form-group">
+    <input id="image" name="image" [(ngModel)]="image" type="file" >
+  </div>
+
+  <input type="submit" value="submit" class="btn btn-success">
+</form>

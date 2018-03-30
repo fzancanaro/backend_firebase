@@ -1,0 +1,23 @@
+<ul class = "list-group">
+
+	<div class="row" >
+		  <div class="col-xs-12 col-md-3" *ngFor="let restaurant of restaurants">
+				
+				<a [routerLink]="['/restaurant-details/'+restaurant.$key]" style = "text-align: center;"><h4>{{restaurant.title}}</h4></a>
+				
+				
+				<img style="width:100%;height:150px;" class="thumbnail" src="{{restaurant.firebase_url}}">
+				
+				
+				
+		  </div>
+	</div>
+
+<!---
+	<li class = "list-group-item" *ngFor="let restaurant of restaurants">
+		<a [routerLink]="['/restaurant-details/'+restaurant.$key]">{{restaurant.title}}</a>
+	</li>
+	
+-->	
+</ul>
+
